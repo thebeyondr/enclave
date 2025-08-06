@@ -64,11 +64,11 @@ RUN curl -L https://foundry.paradigm.xyz | bash \
 # ────────────────────────────────────────────────────────────────────────────────
 ENV PATH="/home/${USERNAME}/.risc0/bin:${PATH}"
 
-RUN curl -L https://risczero.com/install | bash \
- && rzup install rust ${RISC0_TOOLCHAIN} \
- && rzup install cpp  ${CPP_VERSION} \
- && rzup install r0vm ${RISCZERO_VERSION} \
- && rzup install cargo-risczero ${RISCZERO_VERSION}
+RUN curl -L https://risczero.com/install | bash
+RUN rzup install rust ${RISC0_TOOLCHAIN}
+RUN rzup install cpp  ${CPP_VERSION}
+RUN rzup install r0vm ${RISCZERO_VERSION}
+RUN rzup install cargo-risczero ${RISCZERO_VERSION}
 
 # ────────────────────────────────────────────────────────────────────────────────
 #   Helpers (yq)  & workspace dir
